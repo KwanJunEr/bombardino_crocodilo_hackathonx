@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { LogIn } from "lucide-react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 const AdminHeader = () => {
+  const pathname = usePathname()
   const [login, setLogin] = useState(false);
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 shadow-sm">
@@ -18,17 +20,23 @@ const AdminHeader = () => {
 
           {/*Desktop Navigation*/}
           {login && (
-            <nav className="hidden md:flex items-center space-x-10 font-bold ">
-              <a className="text-gray-700 hover:text-blue-600 transition-colors">
+            <div className="hidden md:flex items-center space-x-10 font-bold">
+              <Link href={"/admin/dashboard"}>
+              <p className={pathname === "/admin/dashboard" ? `text-blue-600 underline underline-offset-5`: `text-gray-700 hover:text-blue-600 transition-colors` }>
                 Insights
-              </a>
-              <a className="text-gray-700 hover:text-blue-600 transition-colors">
+              </p>
+              </Link>
+              <Link href={"/admin/training"}>
+              <p className="text-gray-700 hover:text-blue-600 transition-colors">
                 Program & Training
-              </a>
-              <a className="text-gray-700 hover:text-blue-600 transition-colors">
+              </p>
+              </Link>
+              <Link href={"/admin/help"}>
+              <p className="text-gray-700 hover:text-blue-600 transition-colors">
                 Help
-              </a>
-            </nav>
+              </p>
+              </Link>
+            </div>
           )}
 
           {/*Log In */}
