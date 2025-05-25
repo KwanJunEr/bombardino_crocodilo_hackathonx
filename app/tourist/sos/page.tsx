@@ -14,6 +14,7 @@ import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import Link from "next/link";
 
 
 interface LocationData {
@@ -358,6 +359,7 @@ const SOSMain = () => {
         {/* SOS Button */}
         <div className="text-center">
          
+         <Link href={"/tourist/sos/sosresult"}>
             <Button
               onClick={()=>{}}
               className="w-50 h-50 my-4 rounded-full bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white text-xl font-bold shadow-lg transform transition-transform hover:scale-105 active:scale-95"
@@ -368,7 +370,7 @@ const SOSMain = () => {
                 <span>Hold for 3 seconds</span>
               </div>
             </Button>
-           
+           </Link>
         </div>
        
 
