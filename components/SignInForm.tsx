@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { PasswordInput } from "./PasswordInput";
 import { GoogleSignInButton } from "./GoogleSignInButton";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const SignInForm: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -125,11 +126,13 @@ const SignInForm: React.FC = () => {
       <div className="mt-6 text-center text-sm animate-slide-up [animation-delay:350ms]">
         <p className="text-muted-foreground">
           Don't have an account?{" "}
+          <Link href={"/tourist/auth/register"} className="text-blue-600 hover:underline">
           <Button variant="link" className="p-0">
             <span className="flex items-center">
               Sign up <ArrowRight className="ml-1 h-3 w-3" />
             </span>
           </Button>
+          </Link>
         </p>
       </div>
     </div>
