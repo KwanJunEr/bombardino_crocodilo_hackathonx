@@ -26,10 +26,10 @@ const compAndLeadPage = () => {
   };
 
   const leaderboardData = [
-    { rank: 1, name: "Robert", fish: 15, points: 600, avatar: "R" },
-    { rank: 2, name: "Kuhan", fish: 13, points: 500, avatar: "K" },
+    { rank: 1, name: "David Kumar", fish: 15, points: 600, avatar: "R" },
+    { rank: 2, name: "Sarah Chen", fish: 13, points: 500, avatar: "K" },
     { rank: 3, name: "You", fish: 10, points: 360, avatar: "Y" },
-    { rank: 4, name: "Aliyah", fish: 8, points: 200, avatar: "AL" },
+    { rank: 4, name: "Lisa Wong", fish: 8, points: 200, avatar: "AL" },
   ];
 
   const CompetitionDetailsPage = () => (
@@ -236,7 +236,7 @@ const compAndLeadPage = () => {
 
                   <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
                     <p className="text-blue-800 mb-3">
-                      Aliyah has to belanja all members since she lost
+                      Lisa Wong has to belanja all members since she lost
                     </p>
                     <Button className="w-full bg-blue-600 hover:bg-blue-700">
                       Go to Restaurant

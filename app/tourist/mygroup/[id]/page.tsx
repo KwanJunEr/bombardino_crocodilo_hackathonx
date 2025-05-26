@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Users, MapPin, Calendar, Trophy, Fish } from "lucide-react";
 import { useParams } from "next/navigation";
 import CreateChallengeDialog from "@/components/CreateChallengeDialog";
+import Link from "next/link";
 
 const groups = [
   {
@@ -46,6 +47,7 @@ const groups = [
       },
     ],
     challenge: {
+        id:"challenge-1",
       title: "See who can fish the most amount of fish",
       created: "One Day Ago",
       participants: 4,
@@ -259,12 +261,14 @@ const MyGroup = () => {
                   </div>
                   
                   <div className="flex gap-3">
+                    <Link href={`/tourist/mygroup/${groupID}/${groupData.challenge.id}`}>
                     <Button
                       className="bg-white/90 text-orange-700 hover:bg-white hover:text-orange-800 font-semibold px-6 py-3 backdrop-blur-sm border border-white/30 transition-all duration-300 group-hover:scale-105"
                     >
                       <Trophy className="w-4 h-4 mr-2" />
                       View Challenge
                     </Button>
+                    </Link>
                     
                   </div>
                 </div>
