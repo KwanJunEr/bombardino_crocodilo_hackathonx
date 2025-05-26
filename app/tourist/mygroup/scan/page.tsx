@@ -1,7 +1,7 @@
 "use client";
 import type React from "react";
 
-import { useState,useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Upload, ArrowLeft, Camera, X, Loader2 } from "lucide-react";
@@ -16,20 +16,20 @@ const Scan = () => {
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [points, setPoints] = useState(0);
-  const [type,setType] = useState("");
+  const [type, setType] = useState("");
   const [description, setDescription] = useState<string | null>(null);
 
   useEffect(() => {
-  if (classification && classification.topClass) {
-    if (classification.topClass.toLowerCase().includes("patin")) {
-      setPoints(100); // You can customize the value
-    } else if(classification.topClass.toLowerCase().includes("kelisa")) {
-      setPoints(50); // Points for other fish
-    }else{
-        setPoints(150)
+    if (classification && classification.topClass) {
+      if (classification.topClass.toLowerCase().includes("patin")) {
+        setPoints(100); // You can customize the value
+      } else if (classification.topClass.toLowerCase().includes("kelisa")) {
+        setPoints(50); // Points for other fish
+      } else {
+        setPoints(150);
+      }
     }
-  }
-}, [classification]);
+  }, [classification]);
 
   const handleFileSelect = async (file: File) => {
     if (file && file.type.startsWith("image/")) {
@@ -94,23 +94,22 @@ const Scan = () => {
         const topClass = output.top;
         const confidence = output.confidence;
         const confidencePercentage = (confidence * 100).toFixed(2);
-        console.log(topClass)
+        console.log(topClass);
         setClassification({
           topClass,
           confidence: confidencePercentage,
         });
 
         //Call Gemini API
-        const geminRes = await fetch("/api/fishclassify",{
-            method: "POST",
-            headers:{
-                "Content-Type": "application/json",
-            },
-            body : JSON.stringify({fishName: topClass}),
+        const geminRes = await fetch("/api/fishclassify", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ fishName: topClass }),
         });
-        const geminiData = await geminRes.json()
-        setDescription(geminiData.description || "No description")
-      
+        const geminiData = await geminRes.json();
+        setDescription(geminiData.description || "No description");
       }
 
       console.log("Roboflow Result:", result);
@@ -314,12 +313,12 @@ const Scan = () => {
                               {classification.confidence}%
                             </span>
                           </p>
-                         <div className="pt-3 text-gray-700">
-  <span className="font-medium block mb-1">Description:</span>
-  <ReactMarkdown>
-    {description}
-  </ReactMarkdown>
-</div>
+                          <div className="pt-3 text-gray-700">
+                            <span className="font-medium block mb-1">
+                              Description:
+                            </span>
+                            <ReactMarkdown>{description}</ReactMarkdown>
+                          </div>
                         </div>
                       </div>
                     </div>

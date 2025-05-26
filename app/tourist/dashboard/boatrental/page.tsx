@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { MapPin, Users, CalendarIcon, Star, Anchor, ArrowLeft, Clock, Shield } from "lucide-react"
 import Image from "next/image"
-import { format } from "date-fns"
+import { format} from "date-fns"
 import Link from "next/link"
 
 interface Boat {
