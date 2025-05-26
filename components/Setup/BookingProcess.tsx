@@ -5,6 +5,7 @@ import { Bot, CreditCard, Calendar, CheckCircle, Clock } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 interface BookingProcessProps {
   onComplete: () => void
@@ -137,10 +138,12 @@ export function BookingProcess({ onComplete }: BookingProcessProps) {
         {/* Confirm Button */}
         {isComplete && (
           <div className="text-center pt-4">
+            <Link href={"/tourist/dashboard/result"}>
             <Button onClick={onComplete} size="lg" className="bg-green-600 hover:bg-green-700">
               <CheckCircle className="w-5 h-5 mr-2" />
               Confirm & View Summary
             </Button>
+            </Link>
             <p className="text-xs text-gray-500 mt-2">Click to proceed to your booking summary and trip details</p>
           </div>
         )}
