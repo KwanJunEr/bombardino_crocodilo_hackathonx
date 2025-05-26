@@ -215,7 +215,7 @@ export function MatchFoundStep({ tripData, updateTripData, onNext, onPrev }: Mat
                           </div>
                           <div className="flex items-center gap-1">
                             <Calendar className="w-3 h-3" />
-                            <span>{member.experience} experience</span>
+                            <span>{member.experience} </span>
                           </div>
                           <div className="flex items-center gap-1">
                             <Trophy className="w-3 h-3" />
