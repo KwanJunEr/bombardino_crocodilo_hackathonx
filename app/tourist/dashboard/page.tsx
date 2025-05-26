@@ -22,6 +22,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Link from "next/link"
 
 // Mock data for fishing activities in Pekan
 const fishingActivities = [
@@ -71,30 +72,6 @@ const fishingActivities = [
   },
 ]
 
-// Mock fishing groups
-const fishingGroups = [
-  {
-    id: 1,
-    name: "Pekan Anglers Club",
-    members: 24,
-    lastActivity: "2 days ago",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    id: 2,
-    name: "Pahang River Enthusiasts",
-    members: 18,
-    lastActivity: "1 week ago",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    id: 3,
-    name: "Weekend Warriors",
-    members: 12,
-    lastActivity: "3 days ago",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-]
 
 // Mock weather data for Malaysia
 const currentWeather = {
@@ -326,25 +303,7 @@ export default function FishingDashboard() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {fishingGroups.map((group) => (
-                  <div key={group.id} className="flex items-center justify-between p-3 border rounded-lg">
-                    <div className="flex items-center gap-3">
-                      <Avatar>
-                        <AvatarImage src={group.avatar || "/placeholder.svg"} />
-                        <AvatarFallback>{group.name.charAt(0)}</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <div className="font-medium">{group.name}</div>
-                        <div className="text-sm text-muted-foreground">
-                          {group.members} members • {group.lastActivity}
-                        </div>
-                      </div>
-                    </div>
-                    <Button variant="outline" size="sm">
-                      View
-                    </Button>
-                  </div>
-                ))}
+               
               </div>
             </CardContent>
           </Card>
@@ -397,23 +356,7 @@ export default function FishingDashboard() {
         </div>
 
         {/* Travel Buttons */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Card className="cursor-pointer hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-blue-100 rounded-full">
-                    <Plane className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">Go to Travel</h3>
-                    <p className="text-sm text-muted-foreground">Explore fishing destinations beyond Pekan</p>
-                  </div>
-                </div>
-                <Button>Explore</Button>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="w-full gap-4">
 
           <Card className="cursor-pointer hover:shadow-lg transition-shadow">
             <CardContent className="p-6">
@@ -423,11 +366,15 @@ export default function FishingDashboard() {
                     <Fish className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Create Fishing Travel</h3>
-                    <p className="text-sm text-muted-foreground">Plan your next fishing adventure</p>
+                    <h3 className="font-semibold">From 27th May 2025 to 30th May 2025 is a great time for Fishing in Pekan, Pahang</h3>
+                    <p className="text-sm text-muted-foreground">Plan your next fishing adventure now!</p>
                   </div>
                 </div>
-                <Button>Create</Button>
+                <Link href={"/tourist/dashboard/setup"}>
+                <Button>
+                  Start My Fishing Journey
+                  </Button>
+                  </Link>
               </div>
             </CardContent>
           </Card>

@@ -28,14 +28,10 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <MainHeader/>
-        {children}
-        <Footer/>
-      </body>
-    </html>
+    <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <MainHeader />
+      {children}
+      <Footer />
+    </div>
   );
 }
