@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { Camera, Gift, Star, Trophy, Fish, MapPin, Award, Crown, Medal, Target } from "lucide-react"
+import { Camera, Gift, Star, Trophy, Fish, MapPin, Award, Crown, Medal, Target, ArrowLeft, LinkIcon } from "lucide-react"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
+import Link from "next/link"
+
 
 const FishingCompetition = () => {
   const [currentPage, setCurrentPage] = useState(0)
@@ -36,7 +39,20 @@ const FishingCompetition = () => {
   ]
 
   const CompetitionDetailsPage = () => (
+    
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 p-4 md:p-6">
+      {/* Back to Group Button */}
+      <div className="mb-6">
+        <Link href={"/tourist/mygroup/AXBTGr"}>
+        <Button
+          variant="outline"
+          className="bg-white/80 backdrop-blur-sm border-blue-200 hover:bg-blue-50 transition-all duration-200"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to Group
+        </Button>
+        </Link>
+      </div>
       <div className="max-w-4xl mx-auto">
         {/* Animated Header */}
         <div className="text-center mb-8">
@@ -191,11 +207,13 @@ const FishingCompetition = () => {
               </Card>
 
               {/* Upload Button - Enhanced */}
+              <Link href={"/tourist/mygroup/scan"}>
               <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                 <Camera className="w-6 h-6 mr-3" />
                 Upload Your Catch
                 <div className="ml-3 w-2 h-2 bg-white rounded-full animate-pulse"></div>
               </Button>
+              </Link>
             </TabsContent>
           </Tabs>
         </div>
@@ -205,6 +223,16 @@ const FishingCompetition = () => {
 
   const LeaderboardPage = () => (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 p-4 md:p-6">
+      {/* Back to Group Button */}
+      <div className="mb-6">
+        <Button
+          variant="outline"
+          className="bg-white/80 backdrop-blur-sm border-blue-200 hover:bg-blue-50 transition-all duration-200"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to Group
+        </Button>
+      </div>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
