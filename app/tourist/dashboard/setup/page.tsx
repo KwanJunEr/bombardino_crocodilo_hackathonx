@@ -1,4 +1,12 @@
+"use client";
+import { AccommodationPreferences } from '@/components/Setup/AccomodationPreferences'
+import { BookingProcess } from '@/components/Setup/BookingProcess'
 import DateDurationStep from '@/components/Setup/DateDurationStep'
+import { GroupPreferenceStep } from '@/components/Setup/GroupPreferenceStep'
+import { HotelDetails } from '@/components/Setup/HotelDetails'
+import { HotelRecommendations } from '@/components/Setup/HotelRecommendation'
+import { MatchFoundStep } from '@/components/Setup/MatchFoundStep'
+import { MatchingAnimation } from '@/components/Setup/MatchingAnimation'
 import { StepIndicator } from '@/components/Setup/StepIndicator'
 import React, { useState } from 'react'
 
