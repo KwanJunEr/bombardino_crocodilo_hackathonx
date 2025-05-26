@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import {
@@ -172,14 +173,19 @@ export function TravelSummaryContent({ tripData }: TravelSummaryContentProps) {
                         <h1 className="text-xl font-bold">Further Actions</h1>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 py-2">
+                        <Link href={"/tourist/dashboard/boatrental"}>
+                      
                   <Button variant="outline" className="flex items-center gap-2">
                     <Anchor className="w-4 h-4" />
                     Boat Rental
                   </Button>
+                    </Link>
+                     <Link href={"/tourist/dashboard/fishingmaterial"}>
                   <Button variant="outline" className="flex items-center gap-2">
                     <Fish className="w-4 h-4" />
                     Fishing Materials
                   </Button>
+                  </Link>
                   <Button variant="outline" className="flex items-center gap-2">
                     <Building2 className="w-4 h-4" />
                     More Hotels

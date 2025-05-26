@@ -229,7 +229,7 @@ export default function BoatRental() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 p-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto ">
         <Link href={"/tourist/dashboard/result"}>
         <Button>
             Back To Summary
