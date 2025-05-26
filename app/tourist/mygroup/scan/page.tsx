@@ -54,7 +54,7 @@ const Scan = () => {
   const classifyFish = async (imageUrl: string) => {
     try {
       const response = await fetch(
-        "https://serverless.roboflow.com/infer/workflows/ken-9ufm4/classify-and-conditionally-detect",
+        "https://detect.roboflow.com/infer/workflows/ken-9ufm4/classify-and-conditionally-detect",
         {
           method: "POST",
           headers: {
