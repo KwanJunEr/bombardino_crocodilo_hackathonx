@@ -9,7 +9,7 @@ interface CompletionAnimationProps {
   isCompleted: boolean
 }
 
-export function CompletionAnimation({ isCompleting, isCompleted }: CompletionAnimationProps) {
+export function CompletionAnimation({  isCompleted }: CompletionAnimationProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-4">
       <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center">

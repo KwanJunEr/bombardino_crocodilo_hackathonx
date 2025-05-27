@@ -10,7 +10,7 @@ interface DocumentVerificationStepProps {
     personalId: File | null
     fishingLicense: File | null
   }
-  updateFormData: any
+  updateFormData: (field: keyof DocumentVerificationStepProps["formData"], value: File | null) => void
   onComplete: () => void
   onPrev: () => void
 }

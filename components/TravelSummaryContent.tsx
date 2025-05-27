@@ -27,9 +27,37 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Progress } from "@/components/ui/progress"
+import Image from "next/image"
 
+type GroupMember = {
+  name: string
+  avatar?: string
+  level: string
+};
 interface TravelSummaryContentProps {
-  tripData: any
+  tripData: {
+    duration: number
+    selectedHotel: {
+      name: string
+      image: string
+      price: number
+      rating: number
+      reviews: number
+      description: string
+    }
+    matchedGroup?: {
+      guide: {
+        name: string
+        experience: string
+        rating: number
+      }
+      members: Array<{
+        name: string
+        avatar?: string
+        level: string
+      }>
+    }
+  }
 }
 
 export function TravelSummaryContent({ tripData }: TravelSummaryContentProps) {
@@ -205,9 +233,11 @@ export function TravelSummaryContent({ tripData }: TravelSummaryContentProps) {
               </CardHeader>
               <CardContent>
                 <div className="flex gap-4 mb-4">
-                  <img
+                  <Image
                     src={hotel?.image || "/placeholder.svg"}
                     alt={hotel?.name}
+                    width={300}
+                    height={200}
                     className="w-32 h-24 object-cover rounded-lg"
                   />
                   <div className="flex-1">
@@ -267,7 +297,7 @@ export function TravelSummaryContent({ tripData }: TravelSummaryContentProps) {
                   <div>
                     <h4 className="font-medium mb-3">Group Members</h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {group.members.map((member: any, index: number) => (
+                      {group.members.map((member: GroupMember, index: number) => (
                         <div key={index} className="text-center p-3 bg-gray-50 rounded-lg">
                           <Avatar className="w-12 h-12 mx-auto mb-2">
                             <AvatarImage src={member.avatar || "/placeholder.svg"} />
@@ -311,7 +341,7 @@ export function TravelSummaryContent({ tripData }: TravelSummaryContentProps) {
                     <div className="bg-blue-50 p-4 rounded-lg mb-4">
                       <h4 className="font-medium text-blue-800 mb-1">Day 1</h4>
                       <p className="text-sm text-blue-600">
-                        Optimized for your group's intermediate skill level and weather conditions
+                        Optimized for your group intermediate skill level and weather conditions
                       </p>
                     </div>
 
@@ -363,7 +393,7 @@ export function TravelSummaryContent({ tripData }: TravelSummaryContentProps) {
                     <div className="bg-green-50 p-4 rounded-lg">
                       <p className="text-sm text-green-800">
                         <strong>Pro Tip:</strong> This itinerary is optimized based on local weather patterns, fish
-                        activity, and your group's experience level. Times can be adjusted based on your preferences!
+                        activity, and your group experience level. Times can be adjusted based on your preferences!
                       </p>
                     </div>
                   </div>

@@ -35,7 +35,7 @@ type Member = {
   equipment: string[]
 }
 
-export function MatchFoundStep({ tripData, updateTripData, onNext, onPrev }: MatchFoundStepProps) {
+export function MatchFoundStep({  updateTripData, onNext, onPrev }: MatchFoundStepProps) {
   const [selectedMember, setSelectedMember] = useState<Member | null>(null)
 
   const matchedGroup = {
@@ -140,7 +140,7 @@ export function MatchFoundStep({ tripData, updateTripData, onNext, onPrev }: Mat
     <div className="w-full max-w-5xl mx-auto space-y-6">
       <div className="text-center">
         <h2 className="text-3xl font-bold text-green-600 mb-2">🎉 Perfect Match Found!</h2>
-        <p className="text-gray-600">We've found the ideal fishing group for your skill level and preferences</p>
+        <p className="text-gray-600">We have found the ideal fishing group for your skill level and preferences</p>
       </div>
 
       {/* Fishing Guide */}

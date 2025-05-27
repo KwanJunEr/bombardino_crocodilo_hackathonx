@@ -21,7 +21,7 @@ interface PersonalInfoStepProps {
     phone: string
     password: string
   }
-  updateFormData: any
+  updateFormData: (field: keyof PersonalInfoStepProps["formData"], value: string | Date | undefined) => void
   onNext: () => void
 }
 
