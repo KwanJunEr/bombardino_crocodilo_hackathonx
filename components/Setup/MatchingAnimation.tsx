@@ -8,16 +8,18 @@ interface MatchingAnimationProps {
   onComplete: () => void
 }
 
-export function MatchingAnimation({ onComplete }: MatchingAnimationProps) {
-  const [currentStep, setCurrentStep] = useState(0)
-  const [progress, setProgress] = useState(0)
-
-  const steps = [
+const steps = [
     { icon: Search, text: "Searching for compatible anglers...", duration: 2000 },
     { icon: Target, text: "Matching skill levels...", duration: 1500 },
     { icon: Users, text: "Creating your fishing group...", duration: 1500 },
     { icon: CheckCircle, text: "Perfect match found!", duration: 1000 },
   ]
+
+export function MatchingAnimation({ onComplete }: MatchingAnimationProps) {
+  const [currentStep, setCurrentStep] = useState(0)
+  const [progress, setProgress] = useState(0)
+
+
 
   useEffect(() => {
     const timer = setTimeout(() => {

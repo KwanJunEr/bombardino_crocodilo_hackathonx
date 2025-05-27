@@ -11,17 +11,19 @@ interface BookingProcessProps {
   onComplete: () => void
 }
 
-export function BookingProcess({ onComplete }: BookingProcessProps) {
-  const [currentStep, setCurrentStep] = useState(0)
-  const [progress, setProgress] = useState(0)
-  const [isComplete, setIsComplete] = useState(false)
-
   const steps = [
     { icon: CreditCard, text: "Processing payment...", duration: 3000 },
     { icon: Calendar, text: "Confirming availability...", duration: 2000 },
     { icon: Bot, text: "AI agent securing your reservation...", duration: 2500 },
     { icon: CheckCircle, text: "Booking confirmed!", duration: 1000 },
   ]
+
+export function BookingProcess({ onComplete }: BookingProcessProps) {
+  const [currentStep, setCurrentStep] = useState(0)
+  const [progress, setProgress] = useState(0)
+  const [isComplete, setIsComplete] = useState(false)
+
+
 
   useEffect(() => {
     if (isComplete) return
