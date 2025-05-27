@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
 import { TravelSummaryContent } from "@/components/TravelSummaryContent"
 
 type TripData = {

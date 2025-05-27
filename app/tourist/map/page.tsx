@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { Search, MapPin, Navigation, Fish } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -19,16 +18,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import {
-  GoogleMap,
-  useJsApiLoader,
-  LoadScript,
-  Marker,
-} from "@react-google-maps/api";
 import { useRouter } from "next/navigation";
-import MapComponent from "@/components/MapComponent";
 import ReactGoogleMap from "@/components/MapComponent";
 
 interface Location {

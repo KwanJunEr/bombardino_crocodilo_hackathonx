@@ -1,7 +1,3 @@
-import Footer from "@/components/Footer";
-import MainHeader from "@/components/MainHeader";
-import ManageFooter from "@/components/ManageFooter";
-import ManageHeader from "@/components/ManageHeader";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 

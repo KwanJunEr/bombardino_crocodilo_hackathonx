@@ -7,7 +7,6 @@ import {
   CheckCircle,
   Loader2,
   Phone, 
-  Clock
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { MapPin } from "lucide-react";
@@ -140,7 +139,8 @@ const SOSMain = () => {
         const location = await getLocation();
         setEmergencyData((prev) => ({ ...prev, location }));
         setLocationStatus("success");
-      } catch (err) {
+      } catch (error) {
+        console.log(error)
         setLocationStatus("error");
       }
     };
@@ -155,6 +155,7 @@ const SOSMain = () => {
         setEmergencyData((prev) => ({ ...prev, location }));
         setLocationStatus("success");
       } catch (err) {
+        console.log(err)
         setLocationStatus("error");
       }
     };

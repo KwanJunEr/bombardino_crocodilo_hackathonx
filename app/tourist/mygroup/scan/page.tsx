@@ -16,7 +16,6 @@ const Scan = () => {
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [points, setPoints] = useState(0);
-  const [type, setType] = useState("");
   const [description, setDescription] = useState<string | null>(null);
 
   useEffect(() => {
