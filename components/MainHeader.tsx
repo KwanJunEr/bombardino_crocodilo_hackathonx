@@ -107,7 +107,8 @@ const MainHeader = () => {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="cursor-pointer text-red-600 focus:text-red-600">
                   <LogOut className="mr-2 h-4 w-4" />
-                  <span>Log out</span>
+                  <Link href={"/"}>
+                  <span>Log out</span></Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

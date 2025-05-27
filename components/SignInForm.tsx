@@ -84,7 +84,7 @@ const SignInForm: React.FC = () => {
             <Checkbox
               id="remember"
               checked={rememberMe}
-              onCheckedChange={(checked: any) => 
+              onCheckedChange={(checked:  boolean | "indeterminate") => 
                 setRememberMe(checked === true)
               }
             />
@@ -127,7 +127,7 @@ const SignInForm: React.FC = () => {
 
       <div className="mt-6 text-center text-sm animate-slide-up [animation-delay:350ms]">
         <p className="text-muted-foreground">
-          Don't have an account?{" "}
+          Do not have an account?{" "}
           <Link href={"/tourist/auth/register"} className="text-blue-600 hover:underline">
           <Button variant="link" className="p-0">
             <span className="flex items-center">
