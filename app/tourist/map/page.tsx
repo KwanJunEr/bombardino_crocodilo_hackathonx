@@ -65,11 +65,6 @@ const Map = () => {
     router.push(`/location/${encodeURIComponent(locationName)}`);
   };
 
-
-  const containerStyle = {
-    width: "100%",
-    height: "100vh",
-  };
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50 p-4">
       <div className="max-w-6xl mx-auto space-y-6">
