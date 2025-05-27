@@ -50,7 +50,7 @@ const TourismExperienceSection = () => {
             <CardContent className="text-center">
               <CardDescription className="text-blue-100 text-lg leading-relaxed">
                 Experience world-class fishing, learn local techniques,
-                participate in conservation, and explore Pekan's natural beauty
+                participate in conservation, and explore Pekan natural beauty
               </CardDescription>
             </CardContent>
           </Card>

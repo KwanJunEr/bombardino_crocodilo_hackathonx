@@ -50,7 +50,7 @@ const reviews = [
     date: "2024-01-15",
     location: "Main Dining",
     comment:
-      "Excellent ikan patin masak tempoyak! The flavors were authentic and reminded me of my grandmother's cooking. Service was prompt and friendly.",
+      "Excellent ikan patin masak tempoyak! The flavors were authentic and reminded me of my grandmother cooking. Service was prompt and friendly.",
   },
   {
     id: 2,
@@ -132,7 +132,7 @@ export default function RestaurantDashboard() {
 • Offer cooking classes for signature tempoyak dishes
 • Partner with local tourism boards to attract more visitors to Pekan
 
-The consistent 4-5 star ratings indicate strong customer loyalty and authentic dining experience that sets you apart in Pekan's dining scene.`
+The consistent 4-5 star ratings indicate strong customer loyalty and authentic dining experience that sets you apart in Pekan dining scene.`
 
       setAiInsights(insights)
       setIsGeneratingInsights(false)

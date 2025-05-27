@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import type { TripData } from "@/app/tourist/dashboard/setup/page"
+import Image from "next/image"
 
 interface HotelRecommendationsProps {
   tripData: TripData
@@ -115,7 +116,7 @@ export function HotelRecommendations({ tripData, updateTripData, onNext, onPrev 
           return (
             <Card key={hotel.id} className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative">
-                <img src={hotel.image || "/placeholder.svg"} alt={hotel.name} className="w-full h-48 object-cover" />
+                <Image src={hotel.image || "/placeholder.svg"} alt={hotel.name} className="w-full h-48 object-cover" width={300} height={200}/>
                 {matchScore && matchScore > 50 && (
                   <Badge className="absolute top-2 right-2 bg-green-500">{matchScore}% Match</Badge>
                 )}

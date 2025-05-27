@@ -46,7 +46,7 @@ const FishingSpotSection = () => {
             Prime Fishing Locations
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            Discover Pekan's Legendary Fishing Spots
+            Discover Pekan Legendary Fishing Spots
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             From the royal waters near the palace to the pristine river

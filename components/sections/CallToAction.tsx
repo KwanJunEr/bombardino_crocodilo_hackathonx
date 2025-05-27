@@ -8,10 +8,10 @@ const CallToAction = () => {
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=400&width=1200')] bg-cover bg-center opacity-20" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-            Ready to Experience Pekan's Fishing Paradise?
+            Ready to Experience Pekan  Fishing Paradise?
           </h2>
           <p className="text-xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of fishing enthusiasts who have discovered the magic of Pekan's waters. Start planning your
+            Join thousands of fishing enthusiasts who have discovered the magic of Pekan  waters. Start planning your
             fishing tourism adventure today.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

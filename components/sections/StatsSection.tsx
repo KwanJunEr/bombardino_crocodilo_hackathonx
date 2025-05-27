@@ -16,7 +16,7 @@ const StatsSection = () => {
             Pekan Fishing Tourism by the Numbers
           </h2>
           <p className="text-blue-100 text-lg">
-            Discover why Pekan is Malaysia's premier fishing destination
+            Discover why Pekan is Malaysia premier fishing destination
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

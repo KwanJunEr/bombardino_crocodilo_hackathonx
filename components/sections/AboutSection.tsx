@@ -13,11 +13,11 @@ const AboutSection = () => {
                 Fishing Tourism Heritage
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                Pekan: Malaysia's Royal Fishing Capital
+                Pekan: Malaysia  Royal Fishing Capital
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Nestled in Pahang, Malaysia, Pekan is where the mighty Pahang River meets the South China Sea, creating
-                one of Southeast Asia's most diverse fishing ecosystems. As the royal town of Pahang, Pekan has
+                one of Southeast Asia  most diverse fishing ecosystems. As the royal town of Pahang, Pekan has
                 preserved centuries-old fishing traditions while embracing modern sustainable tourism.
               </p>
               <div className="space-y-6">

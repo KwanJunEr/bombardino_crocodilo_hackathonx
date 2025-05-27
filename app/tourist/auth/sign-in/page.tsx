@@ -40,7 +40,7 @@ const SignInPage: React.FC = () => {
             <h2 className="text-3xl font-bold">Welcome back</h2>
             <p className="mt-2 max-w-md text-primary-foreground/90">
               Sign in to continue your fishing journey in Pekan.
-              We're excited to have you back.
+              We are excited to have you back.
             </p>
           </div>
         </div>

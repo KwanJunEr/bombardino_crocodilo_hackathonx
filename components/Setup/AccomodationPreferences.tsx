@@ -54,7 +54,7 @@ export function AccommodationPreferences({ tripData, updateTripData, onNext, onP
     <div className="w-full max-w-3xl mx-auto space-y-6">
       <div className="text-center">
         <h2 className="text-3xl font-bold mb-2">Accommodation Preferences</h2>
-        <p className="text-gray-600">Tell us what's important to you for your stay</p>
+        <p className="text-gray-600">Tell us what is important to you for your stay</p>
         <p className="text-sm text-gray-500 mt-1">You can skip this step if you prefer to see all options</p>
       </div>
 

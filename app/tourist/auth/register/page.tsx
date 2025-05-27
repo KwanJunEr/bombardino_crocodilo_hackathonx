@@ -49,9 +49,9 @@ export default function RegisterPage() {
     fishingLicense: null,
   })
 
-  const updateFormData = (field: keyof FormData, value: any) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+  const updateFormData = <K extends keyof FormData>(field: K, value: FormData[K]) => {
+  setFormData((prev) => ({ ...prev, [field]: value }))
+}
 
   const nextStep = () => {
     if (currentStep < 3) {

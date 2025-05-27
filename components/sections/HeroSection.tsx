@@ -1,5 +1,5 @@
 import React from 'react'
-import {Fish, Anchor, Waves, Calendar, Camera} from "lucide-react"
+import {Fish, Anchor, Waves, Calendar} from "lucide-react"
 import { Button } from '../ui/button'
 
 const HeroSection = () => {
@@ -26,7 +26,7 @@ const HeroSection = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Discover
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-teal-300 animate-pulse">
-              Pekan's Waters
+              Pekan Waters
             </span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
