@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Separator } from "@/components/ui/separator"
 import { Star, MapPin, ArrowLeft } from "lucide-react"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 
 const touristSpots = [
   {
@@ -16,81 +17,41 @@ const touristSpots = [
     description:
       "One of the world's oldest tropical rainforests, perfect for jungle trekking, canopy walks, and wildlife spotting after a successful fishing trip.",
     rating: 4.7,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/tourist2.jpg?height=200&width=300",
     location: "45 minutes from estuary",
   },
   {
     id: 2,
     type: "tourist",
-    title: "Kuala Pahang Lighthouse",
-    description:
-      "Historic lighthouse offering panoramic views of the estuary and South China Sea. Great for sunset photography and learning about maritime history.",
-    rating: 4.3,
-    image: "/placeholder.svg?height=200&width=300",
-    location: "15 minutes from estuary",
-  },
-  {
-    id: 3,
-    type: "tourist",
-    title: "Pahang River Cruise",
-    description:
-      "Scenic boat cruise along Malaysia's longest river, showcasing mangrove ecosystems, local villages, and diverse wildlife including proboscis monkeys.",
-    rating: 4.5,
-    image: "/placeholder.svg?height=200&width=300",
-    location: "20 minutes from estuary",
-  },
-  {
-    id: 4,
-    type: "tourist",
     title: "Pekan Royal Museum",
     description:
       "Explore the rich history and culture of Pahang's royal heritage in this beautifully preserved traditional Malay palace.",
     rating: 4.2,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/tourist3.jpg?height=200&width=300",
     location: "30 minutes from estuary",
   },
 ]
 
 const restaurants = [
   {
-    id: 5,
+    id: 3,
     type: "restaurant",
     title: "Warung Pak Su Seafood",
     description:
       "Authentic local seafood restaurant famous for fresh catch preparations. Try their signature chili crab and grilled fish - perfect for enjoying your own catch!",
     rating: 4.6,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/shop1.jpg?height=200&width=300",
     location: "10 minutes from estuary",
   },
   {
-    id: 6,
+    id: 4,
     type: "restaurant",
     title: "Restoran Floating Pahang",
     description:
       "Unique floating restaurant experience on the river. Specializes in traditional Malay cuisine with stunning water views and fresh river fish dishes.",
     rating: 4.4,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/shop2.jpg?height=200&width=300",
     location: "25 minutes from estuary",
-  },
-  {
-    id: 7,
-    type: "restaurant",
-    title: "Kedai Kopi Ah Heng",
-    description:
-      "Traditional coffee shop serving hearty local breakfast and lunch. Famous for their nasi lemak, kaya toast, and strong local coffee.",
-    rating: 4.1,
-    image: "/placeholder.svg?height=200&width=300",
-    location: "12 minutes from estuary",
-  },
-  {
-    id: 8,
-    type: "restaurant",
-    title: "Pantai Seafood Village",
-    description:
-      "Beachfront dining with fresh seafood and beautiful sunset views. Known for their barbecued fish, prawns, and traditional fish curry.",
-    rating: 4.5,
-    image: "/placeholder.svg?height=200&width=300",
-    location: "18 minutes from estuary",
   },
 ]
 
@@ -143,10 +104,12 @@ export default function ExplorePlaces() {
                 <Card key={place.id} className="overflow-hidden">
                   <div className="md:flex">
                     <div className="md:w-1/3">
-                      <img
+                      <Image
                         src={place.image || "/placeholder.svg"}
                         alt={place.title}
                         className="w-full h-48 md:h-full object-cover"
+                        width={300}
+                        height={200}
                       />
                     </div>
                     <div className="md:w-2/3 p-6">
@@ -185,10 +148,13 @@ export default function ExplorePlaces() {
                 <Card key={place.id} className="overflow-hidden">
                   <div className="md:flex">
                     <div className="md:w-1/3">
-                      <img
+                      <Image
                         src={place.image || "/placeholder.svg"}
                         alt={place.title}
                         className="w-full h-48 md:h-full object-cover"
+                        width={300}
+                        height={200}
+                    
                       />
                     </div>
                     <div className="md:w-2/3 p-6">

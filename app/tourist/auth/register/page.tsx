@@ -76,7 +76,7 @@ export default function RegisterPage() {
 
     // Redirect to dashboard after animation
     setTimeout(() => {
-      window.location.href = "/dashboard"
+      window.location.href = "/tourist/dashboard"
     }, 4000)
   }
 

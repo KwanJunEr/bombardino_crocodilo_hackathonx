@@ -118,7 +118,7 @@ export function PersonalInfoStep({ formData, updateFormData, onNext }: PersonalI
 
       <div className="text-center text-sm text-gray-600">
         Already have an account?{" "}
-        <Link href="/login" className="text-blue-500 hover:underline">
+        <Link href="/tourist/auth/sign-in" className="text-blue-500 hover:underline">
           Log in
         </Link>
       </div>

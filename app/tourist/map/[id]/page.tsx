@@ -53,9 +53,9 @@ export default function FishingSpotDetails() {
       {/* Header Image */}
       <div
         className="relative h-64 md:h-80 bg-cover bg-center"
-        style={{ backgroundImage: "url(/placeholder.svg?height=320&width=1200)" }}
+        style={{ backgroundImage: "url(/pahang4.jpg?height=320&width=1200)" }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-40" />
+        <div className="absolute inset-0  bg-opacity-40" />
         <div className="absolute bottom-4 left-4 text-white">
           <div className="flex items-center gap-2 mb-2">
             <MapPin className="h-5 w-5" />

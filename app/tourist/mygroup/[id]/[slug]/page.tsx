@@ -7,7 +7,6 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Camera, Gift, Star, Trophy, Fish, MapPin, Award, Crown, Medal, Target, ArrowLeft, LinkIcon } from "lucide-react"
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 import Link from "next/link"
 
 
@@ -380,10 +379,12 @@ const FishingCompetition = () => {
                       <p className="text-blue-700 mb-4">
                         😅 Lisa Wong treats everyone to dinner for coming in last place!
                       </p>
+                      <Link href={"/tourist/map/restaurant"}>
                       <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
                         <MapPin className="w-4 h-4 mr-2" />
-                        Find Restaurant
+                        Recommend Restaurant
                       </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>

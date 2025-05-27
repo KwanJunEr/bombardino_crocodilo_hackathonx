@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import type { TripData } from "@/app/tourist/dashboard/setup/page"
+import Image from "next/image"
 
 interface HotelDetailsProps {
   tripData: TripData
@@ -42,9 +43,11 @@ export function HotelDetails({ tripData, onNext, onPrev }: HotelDetailsProps) {
         <div className="lg:col-span-2 space-y-6">
           <Card>
             <CardContent className="p-0">
-              <img
-                src="/placeholder.svg?height=300&width=600"
+              <Image
+                src="/hotel2.jpg?height=300&width=600"
                 alt={hotel.name}
+                width={600}
+                height={300}
                 className="w-full h-64 object-cover rounded-t-lg"
               />
               <div className="p-6">

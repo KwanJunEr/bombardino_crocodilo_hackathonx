@@ -113,7 +113,7 @@ export default function TravelSummaryPage() {
         price: 180,
         rating: 4.5,
         reviews: 324,
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/hotel2.jpg?height=200&width=300",
         amenities: ["wifi", "parking", "restaurant", "fishing-spots"],
         distance: "2.5 km to fishing spots",
         description: "Luxury resort with direct river access and guided fishing tours",

@@ -427,9 +427,11 @@ export function TravelSummaryContent({ tripData }: TravelSummaryContentProps) {
                 <Share className="w-4 h-4 mr-2" />
                 Share with Group
               </Button>
+              <Link href={"/tourist/dashboard"}>
               <Button onClick={() => router.push("/")} className="w-full">
                 Plan Another Trip
               </Button>
+              </Link>
             </div>
           </div>
         </div>

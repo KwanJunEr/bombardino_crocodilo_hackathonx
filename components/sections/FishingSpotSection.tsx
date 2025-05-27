@@ -63,7 +63,7 @@ const FishingSpotSection = () => {
               <CardHeader className="pb-4">
                 <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-green-400 rounded-lg mb-4 relative overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=200&width=300"
+                    src="/pahang1.jpg?height=200&width=300"
                     alt={spot.name}
                     fill
                     className="object-cover"

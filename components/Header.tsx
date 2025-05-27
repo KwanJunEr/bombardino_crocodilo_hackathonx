@@ -15,10 +15,12 @@ const Header = () => {
             </span>
           </div>
           <div className="hidden md:flex items-center space-x-6">
+          <Link href={"/tourist/auth/sign-in"}>
             <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-green-700 shadow-lg">
               <Globe className="h-4 w-4 mr-2" />
               Join Platform
             </Button>
+            </Link>
           </div>
         </div>
       </div>

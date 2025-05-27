@@ -56,7 +56,7 @@ const boats: Boat[] = [
     rating: 4.8,
     reviews: 124,
     location: "Kuala Pahang",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/boat1.jpg?height=300&width=400",
     features: ["Fish Finder", "Rod Holders", "Live Well", "Ice Box", "Safety Equipment"],
     description:
       "Professional deep sea fishing boat perfect for catching big fish. Equipped with modern fish finding technology and all necessary fishing gear.",
@@ -77,7 +77,7 @@ const boats: Boat[] = [
     rating: 4.7,
     reviews: 89,
     location: "Pekan Jetty",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/boat2.jpg?height=300&width=400",
     features: ["Fishing Rods", "Bait Storage", "Cooler Box", "Shade Cover", "GPS"],
     description:
       "Ideal coastal fishing boat for catching local fish species. Perfect for half-day and full-day fishing trips.",
@@ -98,7 +98,7 @@ const boats: Boat[] = [
     rating: 4.9,
     reviews: 156,
     location: "Sungai Pahang",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/boat3.jpg?height=300&width=400",
     features: ["Tournament Gear", "Fighting Chair", "Outriggers", "Fish Finder", "Live Bait Tank"],
     description:
       "High-end sport fishing boat for serious anglers. Perfect for tournament fishing and catching trophy fish.",
@@ -119,7 +119,7 @@ const boats: Boat[] = [
     rating: 4.6,
     reviews: 203,
     location: "Pantai Sepat",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/boat4.jpg?height=300&width=400",
     features: ["Basic Fishing Gear", "Seating Area", "Canopy", "Cooler", "Safety Vests"],
     description: "Perfect family fishing boat for beginners and casual fishing. Safe and comfortable for all ages.",
     specifications: {
@@ -139,7 +139,7 @@ const boats: Boat[] = [
     rating: 4.5,
     reviews: 167,
     location: "Kampung Pulau Manis",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/boat5.jpg?height=300&width=400",
     features: ["Traditional Nets", "Multiple Rod Holders", "Large Deck Space", "Fish Storage", "Local Guide"],
     description: "Traditional Malaysian fishing boat experience with local fishing techniques and cultural immersion.",
     specifications: {
@@ -159,7 +159,7 @@ const boats: Boat[] = [
     rating: 4.9,
     reviews: 98,
     location: "Nenasi Beach",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/boat6.jpg?height=300&width=400",
     features: ["Professional Equipment", "Sonar System", "Electric Reels", "Fighting Belts", "Captain Included"],
     description:
       "Top-tier professional fishing boat with experienced captain and premium equipment for serious fishing expeditions.",

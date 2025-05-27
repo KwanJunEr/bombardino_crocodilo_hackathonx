@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Image from "next/image"
 
 export default function RestaurantPage() {
   const [selectedFish, setSelectedFish] = useState("")
@@ -60,15 +61,15 @@ export default function RestaurantPage() {
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Ocean's Catch Kitchen</h1>
+              <h1 className="text-3xl font-bold text-gray-900">Restoran Alif & De Alif Curry House</h1>
               <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
                 <div className="flex items-center gap-1">
                   <MapPin className="w-4 h-4" />
-                  <span>123 Harbor Street, Marina Bay</span>
+                  <span>91, Pekan, Pahang</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Phone className="w-4 h-4" />
-                  <span>+65 6123 4567</span>
+                  <span>+013-993 5354</span>
                 </div>
               </div>
             </div>
@@ -164,10 +165,12 @@ export default function RestaurantPage() {
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <img
-                      src="/placeholder.svg?height=300&width=400"
+                    <Image
+                      src="/ikancurry.jpg?height=300&width=400"
                       alt="Ikan Curry"
                       className="w-full h-64 object-cover rounded-lg"
+                      width={400}
+                      height={300}
                     />
                   </div>
                   <div>

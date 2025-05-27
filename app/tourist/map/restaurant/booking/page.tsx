@@ -269,21 +269,21 @@ export default function BookingPage() {
                 <div className="border-t pt-4">
                   <div className="flex justify-between items-center mb-2">
                     <span>Cooking Fee</span>
-                    <span>$28.00</span>
+                    <span>RM30.00</span>
                   </div>
                   <div className="flex justify-between items-center text-sm text-gray-600">
                     <span>Service Charge</span>
-                    <span>$3.00</span>
+                    <span>RM5.00</span>
                   </div>
                   <div className="flex justify-between items-center font-semibold text-lg border-t mt-2 pt-2">
                     <span>Total</span>
-                    <span>$31.00</span>
+                    <span>RM120.00</span>
                   </div>
                 </div>
 
                 <div className="bg-blue-50 p-3 rounded-lg">
                   <p className="text-sm text-blue-800">
-                    <strong>Note:</strong> Please bring your fresh catch cleaned and ready for cooking. Our chefs will
+                    <strong>Note:</strong> Please bring your fresh catch. Our chefs will
                     handle the rest!
                   </p>
                 </div>

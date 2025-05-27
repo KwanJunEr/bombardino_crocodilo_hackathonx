@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Upload, ArrowLeft, Camera, X, Loader2 } from "lucide-react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
+import Link from "next/link";
 
 const Scan = () => {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -330,10 +331,12 @@ const Scan = () => {
 
         {/* Bottom Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+          <Link href={"/tourist/mygroup/AXBTGr/challenge-1"}>
           <Button variant="outline" className="gap-2 w-full sm:w-auto">
             <ArrowLeft className="h-4 w-4" />
             Back to Game
           </Button>
+          </Link>
           <Button
             onClick={handleUploadAnother}
             className="gap-2 w-full sm:w-auto"
