@@ -12,7 +12,7 @@ interface FishingProfileStepProps {
     fishingFrequency: string
     howDidYouKnow: string
   }
-  updateFormData: any
+  updateFormData:  (field: keyof FishingProfileStepProps["formData"], value: string) => void
   onNext: () => void
   onPrev: () => void
 }
@@ -84,7 +84,7 @@ export function FishingProfileStep({ formData, updateFormData, onNext, onPrev }:
         </div>
 
         <div className="space-y-2">
-          <Label>How did you know about Pekan's Fishing?</Label>
+          <Label>How did you know about Pekan Fishing Tourism?</Label>
           <Select value={formData.howDidYouKnow} onValueChange={(value) => updateFormData("howDidYouKnow", value)}>
             <SelectTrigger>
               <SelectValue placeholder="Select how you heard about us" />
