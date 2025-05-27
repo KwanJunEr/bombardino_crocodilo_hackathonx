@@ -235,7 +235,7 @@ export function MatchFoundStep({  updateTripData, onNext, onPrev }: MatchFoundSt
                       <div className="text-xs text-gray-500">
                         <span>Age {member.age}</span>
                       </div>
-                      <Dialog>
+                      <Dialog open={!!selectedMember} onOpenChange={(open) => !open && setSelectedMember(null)}>
                         <DialogTrigger asChild>
                           <Button
                             size="sm"
