@@ -1,11 +1,29 @@
-"use client"
-import { useRouter } from "next/navigation"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Star, MapPin, Clock, Fish, Shield, Lightbulb, TrendingUp } from "lucide-react"
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts"
+"use client";
+import { useRouter } from "next/navigation";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Star,
+  MapPin,
+  Clock,
+  Fish,
+  Shield,
+  Lightbulb,
+  TrendingUp,
+} from "lucide-react";
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts";
 
 const tidalData = [
   { time: "00:00", height: 2.1 },
@@ -17,7 +35,7 @@ const tidalData = [
   { time: "18:00", height: 2.7 },
   { time: "21:00", height: 1.5 },
   { time: "24:00", height: 2.1 },
-]
+];
 
 const fishTypes = [
   { name: "Barramundi", season: "Year-round", difficulty: "Medium" },
@@ -26,7 +44,7 @@ const fishTypes = [
   { name: "Queenfish", season: "Year-round", difficulty: "Medium" },
   { name: "Trevally", season: "May-Nov", difficulty: "Medium" },
   { name: "Flathead", season: "Year-round", difficulty: "Easy" },
-]
+];
 
 const safetyTips = [
   "Always wear a life jacket when fishing from boats",
@@ -35,7 +53,7 @@ const safetyTips = [
   "Carry emergency communication devices",
   "Be aware of tidal changes and strong currents",
   "Use sun protection and stay hydrated",
-]
+];
 
 const aiTips = [
   "Fish during incoming tides for better results - the moving water brings baitfish closer to shore",
@@ -43,10 +61,10 @@ const aiTips = [
   "Target structure areas like fallen trees and rock formations where fish tend to congregate",
   "During high tide, focus on shallow mangrove areas where fish come to feed",
   "Use lighter tackle during low light conditions as fish are less wary",
-]
+];
 
 export default function FishingSpotDetails() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-gray-50 px-10 py-5">
@@ -61,7 +79,9 @@ export default function FishingSpotDetails() {
             <MapPin className="h-5 w-5" />
             <span className="text-sm">Pahang, Malaysia</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold">Sungai Pahang Estuary</h1>
+          <h1 className="text-3xl md:text-4xl font-bold">
+            Sungai Pahang Estuary
+          </h1>
         </div>
         <Badge className="absolute top-4 right-4 bg-green-600 hover:bg-green-700">
           <Shield className="h-4 w-4 mr-1" />
@@ -77,12 +97,16 @@ export default function FishingSpotDetails() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-700 leading-relaxed">
-              Sungai Pahang Estuary is Malaysia's premier fishing destination, where the mighty Pahang River meets the
-              South China Sea. This expansive estuary system offers diverse fishing opportunities with its mix of
-              freshwater and saltwater environments. The area is renowned for its abundant fish populations, including
-              prized barramundi, mangrove jack, and various trevally species. The estuary's complex network of channels,
-              mangrove forests, and shallow flats provides excellent habitat for both predator and prey fish, making it
-              an ideal location for anglers of all skill levels.
+              Sungai Pahang Estuary is Malaysia&apos;s premier fishing
+              destination, where the mighty Pahang River meets the South China
+              Sea. This expansive estuary system offers diverse fishing
+              opportunities with its mix of freshwater and saltwater
+              environments. The area is renowned for its abundant fish
+              populations, including prized barramundi, mangrove jack, and
+              various trevally species. The estuary&apos;s complex network of
+              channels, mangrove forests, and shallow flats provides excellent
+              habitat for both predator and prey fish, making it an ideal
+              location for anglers of all skill levels.
             </p>
           </CardContent>
         </Card>
@@ -99,11 +123,16 @@ export default function FishingSpotDetails() {
             <CardContent>
               <div className="flex items-center gap-2 mb-2">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="h-6 w-6 fill-yellow-500 text-yellow-500" />
+                  <Star
+                    key={star}
+                    className="h-6 w-6 fill-yellow-500 text-yellow-500"
+                  />
                 ))}
                 <span className="text-lg font-semibold">4.8/5</span>
               </div>
-              <p className="text-sm text-gray-600">Based on 127 angler reviews</p>
+              <p className="text-sm text-gray-600">
+                Based on 127 angler reviews
+              </p>
             </CardContent>
           </Card>
 
@@ -124,7 +153,9 @@ export default function FishingSpotDetails() {
                   <span>Other species:</span>
                   <span className="font-semibold">10 per day</span>
                 </div>
-                <p className="text-sm text-gray-600 mt-2">Minimum size: 35cm for barramundi</p>
+                <p className="text-sm text-gray-600 mt-2">
+                  Minimum size: 35cm for barramundi
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -158,7 +189,8 @@ export default function FishingSpotDetails() {
               AI-Generated Fishing Tips
             </CardTitle>
             <CardDescription className="text-blue-600">
-              Personalized recommendations based on local conditions and expert knowledge
+              Personalized recommendations based on local conditions and expert
+              knowledge
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -219,9 +251,11 @@ export default function FishingSpotDetails() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <TrendingUp className="h-5 w-5 text-blue-500" />
-              Today's Tidal Chart
+              Today&apos;s Tidal Chart
             </CardTitle>
-            <CardDescription>Tide heights in meters - Plan your fishing around tidal movements</CardDescription>
+            <CardDescription>
+              Tide heights in meters - Plan your fishing around tidal movements
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <ChartContainer
@@ -293,11 +327,15 @@ export default function FishingSpotDetails() {
 
         {/* Explore More Button */}
         <div className="text-center">
-          <Button size="lg" onClick={() => router.push("/tourist/map/recommend")} className="bg-blue-600 hover:bg-blue-700">
+          <Button
+            size="lg"
+            onClick={() => router.push("/tourist/map/recommend")}
+            className="bg-blue-600 hover:bg-blue-700"
+          >
             Explore More Places
           </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }

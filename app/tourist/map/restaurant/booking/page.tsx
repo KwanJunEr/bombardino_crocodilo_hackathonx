@@ -1,20 +1,32 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { Calendar, Users, ArrowLeft, Check } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Calendar, Users, ArrowLeft, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function BookingPage() {
-  const router = useRouter()
-  const [isBooked, setIsBooked] = useState(false)
+  const router = useRouter();
+  const [isBooked, setIsBooked] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,20 +36,20 @@ export default function BookingPage() {
     guests: "",
     fishType: "",
     specialRequests: "",
-  })
+  });
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsBooked(true)
-  }
+    e.preventDefault();
+    setIsBooked(true);
+  };
 
   const handleBackToMenu = () => {
-    router.push("/tourist/map/restaurant")
-  }
+    router.push("/tourist/map/restaurant");
+  };
 
   if (isBooked) {
     return (
@@ -47,9 +59,12 @@ export default function BookingPage() {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Check className="w-8 h-8 text-green-600" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Booking Confirmed!</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              Booking Confirmed!
+            </h2>
             <p className="text-gray-600 mb-6">
-              Your table has been reserved. We'll send you a confirmation email shortly.
+              Your table has been reserved. We&apos;ll send you a confirmation
+              email shortly.
             </p>
             <div className="space-y-2 text-sm text-gray-700 mb-6">
               <p>
@@ -71,7 +86,7 @@ export default function BookingPage() {
           </CardContent>
         </Card>
       </div>
-    )
+    );
   }
 
   return (
@@ -79,13 +94,20 @@ export default function BookingPage() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8">
-          <Button variant="outline" size="sm" onClick={handleBackToMenu} className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleBackToMenu}
+            className="flex items-center gap-2"
+          >
             <ArrowLeft className="w-4 h-4" />
             Back to Menu
           </Button>
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Confirm Your Booking</h1>
-            <p className="text-gray-600">Ocean's Catch Kitchen</p>
+            <h1 className="text-3xl font-bold text-gray-900">
+              Confirm Your Booking
+            </h1>
+            <p className="text-gray-600">Ocean&apos;s Catch Kitchen</p>
           </div>
         </div>
 
@@ -95,7 +117,9 @@ export default function BookingPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Reservation Details</CardTitle>
-                <CardDescription>Please fill in your details to complete the booking</CardDescription>
+                <CardDescription>
+                  Please fill in your details to complete the booking
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -105,7 +129,9 @@ export default function BookingPage() {
                       <Input
                         id="name"
                         value={formData.name}
-                        onChange={(e) => handleInputChange("name", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("name", e.target.value)
+                        }
                         placeholder="Enter your full name"
                         required
                       />
@@ -116,7 +142,9 @@ export default function BookingPage() {
                         id="email"
                         type="email"
                         value={formData.email}
-                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("email", e.target.value)
+                        }
                         placeholder="Enter your email"
                         required
                       />
@@ -128,7 +156,9 @@ export default function BookingPage() {
                     <Input
                       id="phone"
                       value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("phone", e.target.value)
+                      }
                       placeholder="Enter your phone number"
                       required
                     />
@@ -141,14 +171,21 @@ export default function BookingPage() {
                         id="date"
                         type="date"
                         value={formData.date}
-                        onChange={(e) => handleInputChange("date", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("date", e.target.value)
+                        }
                         min={new Date().toISOString().split("T")[0]}
                         required
                       />
                     </div>
                     <div>
                       <Label htmlFor="time">Time *</Label>
-                      <Select value={formData.time} onValueChange={(value) => handleInputChange("time", value)}>
+                      <Select
+                        value={formData.time}
+                        onValueChange={(value) =>
+                          handleInputChange("time", value)
+                        }
+                      >
                         <SelectTrigger>
                           <SelectValue placeholder="Select time" />
                         </SelectTrigger>
@@ -172,7 +209,12 @@ export default function BookingPage() {
                     </div>
                     <div>
                       <Label htmlFor="guests">Number of Guests *</Label>
-                      <Select value={formData.guests} onValueChange={(value) => handleInputChange("guests", value)}>
+                      <Select
+                        value={formData.guests}
+                        onValueChange={(value) =>
+                          handleInputChange("guests", value)
+                        }
+                      >
                         <SelectTrigger>
                           <SelectValue placeholder="Guests" />
                         </SelectTrigger>
@@ -191,19 +233,40 @@ export default function BookingPage() {
                   </div>
 
                   <div>
-                    <Label htmlFor="fishType">Type of Fish You're Bringing *</Label>
-                    <Select value={formData.fishType} onValueChange={(value) => handleInputChange("fishType", value)}>
+                    <Label htmlFor="fishType">
+                      Type of Fish You&apos;re Bringing *
+                    </Label>
+                    <Select
+                      value={formData.fishType}
+                      onValueChange={(value) =>
+                        handleInputChange("fishType", value)
+                      }
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Select your fish type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="ikan-patin">Ikan Patin (Asian Catfish)</SelectItem>
-                        <SelectItem value="ikan-tenggiri">Ikan Tenggiri (Spanish Mackerel)</SelectItem>
-                        <SelectItem value="ikan-kembung">Ikan Kembung (Indian Mackerel)</SelectItem>
-                        <SelectItem value="ikan-siakap">Ikan Siakap (Sea Bass)</SelectItem>
-                        <SelectItem value="ikan-merah">Ikan Merah (Red Snapper)</SelectItem>
-                        <SelectItem value="ikan-bawal">Ikan Bawal (Pomfret)</SelectItem>
-                        <SelectItem value="other">Other (please specify in special requests)</SelectItem>
+                        <SelectItem value="ikan-patin">
+                          Ikan Patin (Asian Catfish)
+                        </SelectItem>
+                        <SelectItem value="ikan-tenggiri">
+                          Ikan Tenggiri (Spanish Mackerel)
+                        </SelectItem>
+                        <SelectItem value="ikan-kembung">
+                          Ikan Kembung (Indian Mackerel)
+                        </SelectItem>
+                        <SelectItem value="ikan-siakap">
+                          Ikan Siakap (Sea Bass)
+                        </SelectItem>
+                        <SelectItem value="ikan-merah">
+                          Ikan Merah (Red Snapper)
+                        </SelectItem>
+                        <SelectItem value="ikan-bawal">
+                          Ikan Bawal (Pomfret)
+                        </SelectItem>
+                        <SelectItem value="other">
+                          Other (please specify in special requests)
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -213,13 +276,18 @@ export default function BookingPage() {
                     <Textarea
                       id="specialRequests"
                       value={formData.specialRequests}
-                      onChange={(e) => handleInputChange("specialRequests", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("specialRequests", e.target.value)
+                      }
                       placeholder="Any special dietary requirements, cooking preferences, or other requests..."
                       rows={3}
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700">
+                  <Button
+                    type="submit"
+                    className="w-full bg-orange-600 hover:bg-orange-700"
+                  >
                     Confirm Booking
                   </Button>
                 </form>
@@ -239,7 +307,8 @@ export default function BookingPage() {
                   <div>
                     <p className="font-medium">Date & Time</p>
                     <p className="text-sm text-gray-600">
-                      {formData.date || "Not selected"} at {formData.time || "Not selected"}
+                      {formData.date || "Not selected"} at{" "}
+                      {formData.time || "Not selected"}
                     </p>
                   </div>
                 </div>
@@ -249,7 +318,8 @@ export default function BookingPage() {
                   <div>
                     <p className="font-medium">Party Size</p>
                     <p className="text-sm text-gray-600">
-                      {formData.guests || "Not selected"} {formData.guests === "1" ? "guest" : "guests"}
+                      {formData.guests || "Not selected"}{" "}
+                      {formData.guests === "1" ? "guest" : "guests"}
                     </p>
                   </div>
                 </div>
@@ -260,7 +330,9 @@ export default function BookingPage() {
                     <p className="font-medium">Fish Type</p>
                     <p className="text-sm text-gray-600">
                       {formData.fishType
-                        ? formData.fishType.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())
+                        ? formData.fishType
+                            .replace("-", " ")
+                            .replace(/\b\w/g, (l) => l.toUpperCase())
                         : "Not selected"}
                     </p>
                   </div>
@@ -283,8 +355,8 @@ export default function BookingPage() {
 
                 <div className="bg-blue-50 p-3 rounded-lg">
                   <p className="text-sm text-blue-800">
-                    <strong>Note:</strong> Please bring your fresh catch. Our chefs will
-                    handle the rest!
+                    <strong>Note:</strong> Please bring your fresh catch. Our
+                    chefs will handle the rest!
                   </p>
                 </div>
               </CardContent>
@@ -293,5 +365,5 @@ export default function BookingPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

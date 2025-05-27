@@ -1,14 +1,29 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Progress } from "@/components/ui/progress"
-import { Separator } from "@/components/ui/separator"
-import { UtensilsCrossed, Users, Star, MapPin, Calendar, DollarSign, Sparkles, Loader2 } from "lucide-react"
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Progress } from "@/components/ui/progress";
+import { Separator } from "@/components/ui/separator";
+import {
+  UtensilsCrossed,
+  Users,
+  Star,
+  MapPin,
+  Calendar,
+  DollarSign,
+  Sparkles,
+  Loader2,
+} from "lucide-react";
 import {
   LineChart,
   Line,
@@ -22,7 +37,7 @@ import {
   PieChart,
   Pie,
   Cell,
-} from "recharts"
+} from "recharts";
 
 // Mock data
 const monthlyCustomers = [
@@ -32,14 +47,14 @@ const monthlyCustomers = [
   { month: "Apr", customers: 1350, revenue: 51000 },
   { month: "May", customers: 1580, revenue: 59000 },
   { month: "Jun", customers: 1720, revenue: 65000 },
-]
+];
 
 const diningAreas = [
   { name: "Main Dining", customers: 40, color: "#0088FE" },
   { name: "Private Rooms", customers: 25, color: "#00C49F" },
   { name: "Outdoor Terrace", customers: 20, color: "#FFBB28" },
   { name: "Bar Area", customers: 15, color: "#FF8042" },
-]
+];
 
 const reviews = [
   {
@@ -92,14 +107,14 @@ const reviews = [
     comment:
       "Fantastic local dishes! The ikan patin gulai was exceptional. Staff were knowledgeable about local ingredients and cooking methods.",
   },
-]
+];
 
 export default function RestaurantDashboard() {
-  const [isGeneratingInsights, setIsGeneratingInsights] = useState(false)
-  const [aiInsights, setAiInsights] = useState("")
+  const [isGeneratingInsights, setIsGeneratingInsights] = useState(false);
+  const [aiInsights, setAiInsights] = useState("");
 
   const generateInsights = async () => {
-    setIsGeneratingInsights(true)
+    setIsGeneratingInsights(true);
 
     // Simulate loading time
     setTimeout(() => {
@@ -132,12 +147,12 @@ export default function RestaurantDashboard() {
 • Offer cooking classes for signature tempoyak dishes
 • Partner with local tourism boards to attract more visitors to Pekan
 
-The consistent 4-5 star ratings indicate strong customer loyalty and authentic dining experience that sets you apart in Pekan dining scene.`
+The consistent 4-5 star ratings indicate strong customer loyalty and authentic dining experience that sets you apart in Pekan dining scene.`;
 
-      setAiInsights(insights)
-      setIsGeneratingInsights(false)
-    }, 2000)
-  }
+      setAiInsights(insights);
+      setIsGeneratingInsights(false);
+    }, 2000);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
@@ -148,12 +163,19 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
             <div className="flex items-center">
               <UtensilsCrossed className="h-8 w-8 text-orange-600 mr-3" />
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Restoran Sungai Pahang</h1>
-                <p className="text-sm text-gray-500">Restaurant Management Dashboard - Pekan, Pahang</p>
+                <h1 className="text-2xl font-bold text-gray-900">
+                  Restoran Sungai Pahang
+                </h1>
+                <p className="text-sm text-gray-500">
+                  Restaurant Management Dashboard - Pekan, Pahang
+                </p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <Badge variant="outline" className="text-green-600 border-green-600">
+              <Badge
+                variant="outline"
+                className="text-green-600 border-green-600"
+              >
                 <MapPin className="h-3 w-3 mr-1" />
                 Pekan, Pahang
               </Badge>
@@ -167,7 +189,9 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Customers</CardTitle>
+              <CardTitle className="text-sm font-medium">
+                Total Customers
+              </CardTitle>
               <Users className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -219,7 +243,9 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
               <Card>
                 <CardHeader>
                   <CardTitle>Customer Trends</CardTitle>
-                  <CardDescription>Monthly customer count and revenue</CardDescription>
+                  <CardDescription>
+                    Monthly customer count and revenue
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ResponsiveContainer width="100%" height={300}>
@@ -228,7 +254,12 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
                       <XAxis dataKey="month" />
                       <YAxis />
                       <Tooltip />
-                      <Line type="monotone" dataKey="customers" stroke="#EA580C" strokeWidth={2} />
+                      <Line
+                        type="monotone"
+                        dataKey="customers"
+                        stroke="#EA580C"
+                        strokeWidth={2}
+                      />
                     </LineChart>
                   </ResponsiveContainer>
                 </CardContent>
@@ -238,7 +269,9 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
               <Card>
                 <CardHeader>
                   <CardTitle>Popular Dining Areas</CardTitle>
-                  <CardDescription>Customer distribution by seating area</CardDescription>
+                  <CardDescription>
+                    Customer distribution by seating area
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ResponsiveContainer width="100%" height={300}>
@@ -250,7 +283,9 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
                         outerRadius={80}
                         fill="#8884d8"
                         dataKey="customers"
-                        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                        label={({ name, percent }) =>
+                          `${name} ${(percent * 100).toFixed(0)}%`
+                        }
                       >
                         {diningAreas.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.color} />
@@ -266,7 +301,7 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
             {/* Quick Stats */}
             <Card>
               <CardHeader>
-                <CardTitle>Today's Activity</CardTitle>
+                <CardTitle>Today&apos;s Activity</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -282,7 +317,9 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
                   </div>
                   <div className="space-y-2">
                     <p className="text-sm font-medium">Revenue Today</p>
-                    <p className="text-2xl font-bold text-purple-600">RM 3,450</p>
+                    <p className="text-2xl font-bold text-purple-600">
+                      RM 3,450
+                    </p>
                     <Progress value={60} className="h-2" />
                   </div>
                 </div>
@@ -316,14 +353,22 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
                 <CardContent>
                   <div className="space-y-4">
                     {diningAreas.map((area, index) => (
-                      <div key={index} className="flex items-center justify-between">
+                      <div
+                        key={index}
+                        className="flex items-center justify-between"
+                      >
                         <div className="flex items-center space-x-3">
-                          <div className="w-3 h-3 rounded-full" style={{ backgroundColor: area.color }} />
+                          <div
+                            className="w-3 h-3 rounded-full"
+                            style={{ backgroundColor: area.color }}
+                          />
                           <span className="font-medium">{area.name}</span>
                         </div>
                         <div className="text-right">
                           <p className="font-bold">{area.customers}%</p>
-                          <p className="text-sm text-muted-foreground">of total diners</p>
+                          <p className="text-sm text-muted-foreground">
+                            of total diners
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -337,7 +382,9 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
             <Card>
               <CardHeader>
                 <CardTitle>Recent Customer Reviews</CardTitle>
-                <CardDescription>Latest feedback from our valued customers</CardDescription>
+                <CardDescription>
+                  Latest feedback from our valued customers
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
@@ -345,7 +392,9 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
                     <div key={review.id} className="space-y-3">
                       <div className="flex items-start space-x-4">
                         <Avatar>
-                          <AvatarImage src={review.avatar || "/placeholder.svg"} />
+                          <AvatarImage
+                            src={review.avatar || "/placeholder.svg"}
+                          />
                           <AvatarFallback>
                             {review.name
                               .split(" ")
@@ -369,7 +418,9 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
                                 <Star
                                   key={i}
                                   className={`h-4 w-4 ${
-                                    i < review.rating ? "text-yellow-400 fill-current" : "text-gray-300"
+                                    i < review.rating
+                                      ? "text-yellow-400 fill-current"
+                                      : "text-gray-300"
                                   }`}
                                 />
                               ))}
@@ -393,10 +444,17 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
                   <Sparkles className="h-5 w-5 mr-2 text-purple-600" />
                   AI-Powered Review Analysis
                 </CardTitle>
-                <CardDescription>Get intelligent insights based on customer reviews and feedback</CardDescription>
+                <CardDescription>
+                  Get intelligent insights based on customer reviews and
+                  feedback
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <Button onClick={generateInsights} disabled={isGeneratingInsights} className="w-full">
+                <Button
+                  onClick={generateInsights}
+                  disabled={isGeneratingInsights}
+                  className="w-full"
+                >
                   {isGeneratingInsights ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -413,11 +471,15 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
                 {aiInsights && (
                   <Card className="bg-gradient-to-r from-purple-50 to-blue-50 border-purple-200">
                     <CardHeader>
-                      <CardTitle className="text-lg text-purple-800">Review Analysis & Recommendations</CardTitle>
+                      <CardTitle className="text-lg text-purple-800">
+                        Review Analysis & Recommendations
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="prose prose-sm max-w-none">
-                        <p className="text-gray-700 whitespace-pre-wrap">{aiInsights}</p>
+                        <p className="text-gray-700 whitespace-pre-wrap">
+                          {aiInsights}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>
@@ -427,7 +489,8 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
                   <div className="text-center py-8 text-muted-foreground">
                     <Sparkles className="h-12 w-12 mx-auto mb-4 text-purple-300" />
                     <p>
-                      Click "Generate Insights" to get AI-powered analysis of your customer reviews and actionable
+                      Click &quot;Generate Insights&quot; to get AI-powered
+                      analysis of your customer reviews and actionable
                       recommendations for your restaurant.
                     </p>
                   </div>
@@ -438,5 +501,5 @@ The consistent 4-5 star ratings indicate strong customer loyalty and authentic d
         </Tabs>
       </div>
     </div>
-  )
+  );
 }

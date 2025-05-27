@@ -6,15 +6,26 @@ import {
   Camera,
   CheckCircle,
   Loader2,
-  Phone, 
+  Phone,
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import Link from "next/link";
-
 
 interface LocationData {
   latitude: number;
@@ -40,7 +51,7 @@ const emergencyCategories = [
   { value: "natural", label: "Natural Disaster", icon: "🌪️" },
   { value: "personal", label: "Personal Safety", icon: "⚠️" },
   { value: "other", label: "Other Emergency", icon: "🆘" },
-]
+];
 
 const SOSMain = () => {
   const [emergencyData, setEmergencyData] = useState<EmergencyData>({
@@ -55,11 +66,11 @@ const SOSMain = () => {
   >("loading");
   const reverseGeocode = async (
     lat: number,
-    lon: number
+    lon: number,
   ): Promise<{ address?: string; city?: string; country?: string }> => {
     try {
       const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`,
       );
       const data = await response.json();
       if (data && data.display_name) {
@@ -97,7 +108,7 @@ const SOSMain = () => {
           // Get address information
           const addressInfo = await reverseGeocode(
             locationData.latitude,
-            locationData.longitude
+            locationData.longitude,
           );
 
           resolve({
@@ -125,7 +136,7 @@ const SOSMain = () => {
           enableHighAccuracy: true,
           timeout: 15000,
           maximumAge: 60000,
-        }
+        },
       );
     });
   };
@@ -140,12 +151,12 @@ const SOSMain = () => {
         setEmergencyData((prev) => ({ ...prev, location }));
         setLocationStatus("success");
       } catch (error) {
-        console.log(error)
+        console.log(error);
         setLocationStatus("error");
       }
     };
     initializeLocation();
-  }, []);
+  });
 
   const retryLocation = () => {
     setLocationStatus("loading");
@@ -155,7 +166,7 @@ const SOSMain = () => {
         setEmergencyData((prev) => ({ ...prev, location }));
         setLocationStatus("success");
       } catch (err) {
-        console.log(err)
+        console.log(err);
         setLocationStatus("error");
       }
     };
@@ -278,7 +289,7 @@ const SOSMain = () => {
                       <span>Updated:</span>
                       <span>
                         {new Date(
-                          emergencyData.location.timestamp
+                          emergencyData.location.timestamp,
                         ).toLocaleTimeString()}
                       </span>
                     </div>
@@ -291,7 +302,7 @@ const SOSMain = () => {
                     onClick={() =>
                       window.open(
                         getGoogleMapsUrl(emergencyData.location!),
-                        "_blank"
+                        "_blank",
                       )
                     }
                   >
@@ -328,67 +339,66 @@ const SOSMain = () => {
             </div>
           </div>
 
-           {/* Emergency Category Selection */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Emergency Category</CardTitle>
-            <CardDescription>Select the type of emergency</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Select
-              value={emergencyData.category}
-              onValueChange={(value) => setEmergencyData((prev) => ({ ...prev, category: value }))}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Choose emergency type" />
-              </SelectTrigger>
-              <SelectContent>
-                {emergencyCategories.map((category) => (
-                  <SelectItem key={category.value} value={category.value}>
-                    <div className="flex items-center space-x-2">
-                      <span>{category.icon}</span>
-                      <span>{category.label}</span>
-                    </div>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </CardContent>
-        </Card>
+          {/* Emergency Category Selection */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Emergency Category</CardTitle>
+              <CardDescription>Select the type of emergency</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Select
+                value={emergencyData.category}
+                onValueChange={(value) =>
+                  setEmergencyData((prev) => ({ ...prev, category: value }))
+                }
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Choose emergency type" />
+                </SelectTrigger>
+                <SelectContent>
+                  {emergencyCategories.map((category) => (
+                    <SelectItem key={category.value} value={category.value}>
+                      <div className="flex items-center space-x-2">
+                        <span>{category.icon}</span>
+                        <span>{category.label}</span>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </CardContent>
+          </Card>
 
+          {/* SOS Button */}
+          <div className="text-center">
+            <Link href={"/tourist/sos/sosresult"}>
+              <Button
+                onClick={() => {}}
+                className="w-50 h-50 my-4 rounded-full bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white text-xl font-bold shadow-lg transform transition-transform hover:scale-105 active:scale-95"
+              >
+                <div className="flex flex-col items-center space-y-1">
+                  <Phone className="h-8 w-8" />
+                  <span>SOS</span>
+                  <span>Hold for 3 seconds</span>
+                </div>
+              </Button>
+            </Link>
+          </div>
 
-        {/* SOS Button */}
-        <div className="text-center">
-         
-         <Link href={"/tourist/sos/sosresult"}>
-            <Button
-              onClick={()=>{}}
-              className="w-50 h-50 my-4 rounded-full bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white text-xl font-bold shadow-lg transform transition-transform hover:scale-105 active:scale-95"
-            >
-              <div className="flex flex-col items-center space-y-1">
-                <Phone className="h-8 w-8" />
-                <span>SOS</span>
-                <span>Hold for 3 seconds</span>
+          {/* Instructions */}
+          <Card className="bg-blue-50 border-blue-200">
+            <CardContent className="pt-2">
+              <div className="space-y-2 text-sm text-blue-800">
+                <h4 className="font-semibold">How it works:</h4>
+                <ol className="list-decimal list-inside space-y-1">
+                  <li>Your location is automatically detected</li>
+                  <li>Select your emergency category</li>
+                  <li>Press the SOS button to send alert</li>
+                  <li>Your exact location and address will be shared</li>
+                </ol>
               </div>
-            </Button>
-           </Link>
-        </div>
-       
-
-        {/* Instructions */}
-        <Card className="bg-blue-50 border-blue-200">
-          <CardContent className="pt-2">
-            <div className="space-y-2 text-sm text-blue-800">
-              <h4 className="font-semibold">How it works:</h4>
-              <ol className="list-decimal list-inside space-y-1">
-                <li>Your location is automatically detected</li>
-                <li>Select your emergency category</li>
-                <li>Press the SOS button to send alert</li>
-                <li>Your exact location and address will be shared</li>
-              </ol>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </main>

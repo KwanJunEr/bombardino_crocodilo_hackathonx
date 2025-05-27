@@ -14,8 +14,9 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-400 leading-relaxed text-justify">
-              Your gateway to Pekan's incredible fishing tourism experiences.
-              Connecting anglers with Malaysia's royal fishing heritage.
+              Your gateway to Pekan&apos;s incredible fishing tourism
+              experiences. Connecting anglers with Malaysia&apos;s royal fishing
+              heritage.
             </p>
           </div>
           <div>
@@ -68,7 +69,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-9 pt-5 text-center text-gray-400">
           <p>
             &copy; 2024 Pekan Hooked. All rights reserved. Promoting sustainable
-            fishing tourism in Malaysia's royal town.
+            fishing tourism in Malaysia&apos;s royal town.
           </p>
         </div>
       </div>

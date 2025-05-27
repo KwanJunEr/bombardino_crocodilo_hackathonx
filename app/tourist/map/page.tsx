@@ -19,7 +19,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { useRouter } from "next/navigation";
 import ReactGoogleMap from "@/components/MapComponent";
 
 interface Location {
@@ -33,9 +32,9 @@ const Map = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [difficultyFilter, setDifficultyFilter] = useState("beginner");
   const [currentLocation, setCurrentLocation] = useState<Location | null>(null);
-  const [locationError, setLocationError] = useState<string | null>(null);
-  const [isLoadingLocation, setIsLoadingLocation] = useState(false);
-  
+
+  const locationError: string = "";
+  const isLoadingLocation: boolean = false;
 
   useEffect(() => {
     setCurrentLocation({
@@ -45,16 +44,6 @@ const Map = () => {
       name: "UMPSA",
     });
   }, []);
-
- 
-  const router = useRouter();
-  interface MarkerClickHandler {
-    (locationName: string): void;
-  }
-
-  const handleMarkerClick: MarkerClickHandler = (locationName: string) => {
-    router.push(`/location/${encodeURIComponent(locationName)}`);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50 p-4">
@@ -159,7 +148,7 @@ const Map = () => {
       </div>
 
       <div className="">
-          <ReactGoogleMap/>
+        <ReactGoogleMap />
       </div>
     </div>
   );
