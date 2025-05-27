@@ -156,7 +156,7 @@ const SOSMain = () => {
       }
     };
     initializeLocation();
-  });
+  },[]);
 
   const retryLocation = () => {
     setLocationStatus("loading");
