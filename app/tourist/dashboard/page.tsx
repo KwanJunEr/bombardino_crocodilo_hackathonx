@@ -156,6 +156,8 @@ export default function FishingDashboard() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <Image
+                width={300}
+                height={200}
                   src={currentActivity.image || "/placeholder.svg"}
                   alt={currentActivity.title}
                   className="w-full h-48 object-cover rounded-lg"

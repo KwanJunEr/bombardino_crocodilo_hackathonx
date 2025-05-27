@@ -97,6 +97,7 @@ const SignInForm: React.FC = () => {
           </Button>
         </div>
 
+        <Link href={"/tourist/dashboard"}>
         <Button 
           type="submit" 
           className="w-full animate-slide-up [animation-delay:200ms]"
@@ -104,6 +105,7 @@ const SignInForm: React.FC = () => {
         >
           {isSubmitting ? "Signing in..." : "Sign in"}
         </Button>
+        </Link>
       </form>
 
       <div className="mt-6">
