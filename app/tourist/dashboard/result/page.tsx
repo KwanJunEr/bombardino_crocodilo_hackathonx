@@ -44,7 +44,6 @@ type TripData = {
 }
 
 export default function TravelSummaryPage() {
-  const router = useRouter()
   const [tripData, setTripData] = useState<TripData | null>(null)
 
   useEffect(() => {

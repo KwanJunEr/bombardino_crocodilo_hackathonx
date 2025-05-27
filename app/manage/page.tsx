@@ -1,29 +1,10 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
-  BarChart3,
-  Users,
-  Calendar,
-  DollarSign,
-  Phone,
-  Mail,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Youtube,
-  TrendingUp,
-  Shield,
-  Clock,
   Zap,
-  Database,
-  Globe,
-  CheckCircle,
-  ArrowRight,
   PlayCircle,
 } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
 import ManageHeader from "@/components/ManageHeader"
 import ManageFooter from "@/components/ManageFooter"
 
